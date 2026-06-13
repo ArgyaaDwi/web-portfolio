@@ -54,14 +54,14 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0f]"
     >
       {/* Animated background grid */}
-      <div
+      {/* <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
             "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
-      />
+      /> */}
 
       {/* Glowing orbs */}
       {/* <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-500 rounded-full opacity-10 blur-[120px] animate-pulse" />
@@ -118,8 +118,8 @@ const Hero = () => {
                   "opacity 0.8s ease 0.35s, transform 0.8s ease 0.35s",
               }}
             >
-              <p className="text-gray-500 text-lg tracking-[0.3em] uppercase font-light">
-                Hello, World! I&apos;m
+              <p className="text-gray-500 text-lg tracking-[0.3em] font-light">
+                Hello, I&apos;m
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-none tracking-tight">
                 Argya <span className="text-transparent"></span>
@@ -150,7 +150,7 @@ const Hero = () => {
 
             {/* Description */}
             <p
-              className="text-base sm:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed"
+              className="text-base sm:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed text-justify"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateY(0)" : "translateY(16px)",
@@ -201,7 +201,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
                   href="#projects"
-                  className="group relative px-8 py-3.5 bg-yellow-500 text-black font-bold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:-translate-y-0.5 text-center"
+                  className="group relative px-8 py-3.5 bg-yellow-400 text-black font-bold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:-translate-y-0.5 text-center"
                 >
                   <span className="relative z-10">Learn More</span>
                   <div className="absolute inset-0 bg-yellow-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -318,24 +318,24 @@ const Hero = () => {
               />
 
               {/* Glow behind image */}
-              <div className="absolute inset-0 bg-yellow-500 rounded-full opacity-20 blur-3xl scale-90" />
+              <div className="absolute inset-0 bg-yellow-500 rounded-3xl opacity-20 blur-3xl scale-90" />
 
               {/* Image container — hexagon-style clip */}
-              <div className="relative w-72 h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-yellow-500/40 shadow-[0_0_60px_rgba(234,179,8,0.2)]">
+              <div className="relative w-72 h-72 lg:w-80 lg:h-80 rounded-3xl overflow-hidden border-2 border-yellow-500/40 shadow-[0_0_60px_rgba(234,179,8,0.2)]">
                 {/* Yellow-to-dark gradient bg inside circle */}
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/30 via-amber-600/20 to-[#0a0a0f]" />
 
                 <Image
-                  src="/images/heroHD.png"
+                  src="/images/foto26-1b1.png"
                   alt="Argya"
                   fill
-                  className="object-contain object-bottom scale-105"
+                  className="object-contain object-bottom scale-100"  
                   priority
                 />
               </div>
 
               {/* Floating skill badges */}
-              <div
+              {/* <div
                 className="absolute -left-8 top-1/6 bg-[#111118] border border-yellow-500/30 rounded-xl px-3 py-2 shadow-xl"
                 style={{ animation: "floatBadge 4s ease-in-out infinite" }}
               >
@@ -350,7 +350,7 @@ const Hero = () => {
                 <span className="text-xs text-yellow-400 font-mono font-bold">
                   React
                 </span>
-              </div>
+              </div> */}
               {/* <div
                 className="absolute -left-4 bottom-1/2 bg-[#111118] border border-yellow-500/30 rounded-xl px-3 py-2 shadow-xl"
                 style={{ animation: "floatBadge 4s ease-in-out infinite 2s" }}
@@ -361,7 +361,7 @@ const Hero = () => {
               </div> */}
 
               {/* Social links bar — below circle, desktop only */}
-              <div className="absolute  left-1/2 -translate-x-1/2 flex items-center gap-2 bg-yellow-500/10 p-2 border border-yellow-500/20 rounded-full">
+              <div className="absolute mt-5 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-yellow-500/10 p-2 border border-yellow-500/20 rounded-full">
                 <a
                   href="https://linkedin.com/in/argya"
                   target="_blank"

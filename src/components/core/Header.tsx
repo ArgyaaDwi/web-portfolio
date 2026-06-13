@@ -9,6 +9,7 @@ const Header = () => {
   const navLinks = [
     { name: "HOME", href: "#home" },
     { name: "ABOUT", href: "#about" },
+    { name: "EXPERIENCE", href: "#experience" },
     { name: "PROJECTS", href: "#projects" },
     { name: "SKILLS", href: "#skills" },
     { name: "CONTACT", href: "#contact" },
@@ -35,7 +36,7 @@ const Header = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
   ${
     isScrolled
-      ? "bg-white/90 backdrop-blur-md border-b border-gray-200"
+      ? "bg-yellow-400/70 backdrop-blur-md border-b border-yellow-500"
       : "bg-transparent border-b border-transparent"
   }`}
       >
@@ -51,7 +52,7 @@ const Header = () => {
             <Link
               href="/"
               className={`text-xl sm:text-2xl font-bold transition-colors
-  ${isScrolled ? "text-gray-900" : "text-yellow-400"}
+  ${isScrolled ? "text-white" : "text-yellow-400"}
   hover:text-yellow-500`}
             >
               ArgyaDwi
@@ -77,7 +78,7 @@ const Header = () => {
                   className={`transition-colors font-medium
         ${
           isScrolled
-            ? "text-gray-700 hover:text-blue-600"
+            ? "text-gray-200 hover:text-gray-600"
             : "text-gray-400 hover:text-yellow-400"
         }`}
                 >

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import AmbientParticles from "../core/AmbientParticles";
 const tabs = ["Frontend", "Backend", "Tools"] as const;
 type Tab = (typeof tabs)[number];
 
@@ -125,23 +126,9 @@ const SkillSection = () => {
       id="skills"
       className="relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#0a0a0f] overflow-hidden"
     >
-    {/* <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0f]"
-    > */}
-      {/* Background grid */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      {/* Glow orbs */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-yellow-500 rounded-full opacity-5 blur-[120px]" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-amber-400 rounded-full opacity-5 blur-[100px]" />
+      <AmbientParticles />
 
       <div ref={ref} className="container mx-auto max-w-6xl relative z-10">
         {/* Header */}
@@ -234,6 +221,20 @@ const SkillSection = () => {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes ambientFloat {
+          0%,
+          100% {
+            transform: translateY(0px) scale(1);
+            opacity: 0.18;
+          }
+          50% {
+            transform: translateY(-12px) scale(1.35);
+            opacity: 0.5;
+          }
+        }
+      `}</style>
     </section>
   );
 };
