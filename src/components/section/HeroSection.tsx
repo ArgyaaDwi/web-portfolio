@@ -164,7 +164,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-3 justify-center lg:hidden">
                 <a
-                  href="https://linkedin.com/in/argya"
+                  href="https://www.linkedin.com/in/argya-dwi/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111118] border border-yellow-500/20 hover:border-yellow-500/60 hover:bg-yellow-500/10 transition-all duration-300 text-gray-400 hover:text-yellow-400"
@@ -179,7 +179,7 @@ const Hero = () => {
                   <span className="text-xs font-semibold">LinkedIn</span>
                 </a>
                 <a
-                  href="https://github.com/argya"
+                  href="https://github.com/ArgyaaDwi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111118] border border-yellow-500/20 hover:border-yellow-500/60 hover:bg-yellow-500/10 transition-all duration-300 text-gray-400 hover:text-yellow-400"
@@ -194,7 +194,7 @@ const Hero = () => {
                   <span className="text-xs font-semibold">GitHub</span>
                 </a>
                 <a
-                  href="mailto:argya@email.com"
+                  href="mailto:ferdinandargya@gmail.com"
                   className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111118] border border-yellow-500/20 hover:border-yellow-500/60 hover:bg-yellow-500/10 transition-all duration-300 text-gray-400 hover:text-yellow-400"
                 >
                   <svg
@@ -259,7 +259,7 @@ const Hero = () => {
               </div>
               <div className="absolute mt-5 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-yellow-500/10 p-2 border border-yellow-500/20 rounded-full">
                 <a
-                  href="https://linkedin.com/in/argya"
+                  href="https://www.linkedin.com/in/argya-dwi/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111118] border border-yellow-500/20 hover:border-yellow-500/60 hover:bg-yellow-500/10 transition-all duration-300 text-gray-400 hover:text-yellow-400 whitespace-nowrap"
@@ -274,7 +274,7 @@ const Hero = () => {
                   <span className="text-xs font-semibold">LinkedIn</span>
                 </a>
                 <a
-                  href="https://github.com/argya"
+                  href="https://github.com/ArgyaaDwi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111118] border border-yellow-500/20 hover:border-yellow-500/60 hover:bg-yellow-500/10 transition-all duration-300 text-gray-400 hover:text-yellow-400 whitespace-nowrap"
@@ -289,7 +289,7 @@ const Hero = () => {
                   <span className="text-xs font-semibold">GitHub</span>
                 </a>
                 <a
-                  href="mailto:argya@email.com"
+                  href="mailto:ferdinandargya@gmail.com"
                   className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111118] border border-yellow-500/20 hover:border-yellow-500/60 hover:bg-yellow-500/10 transition-all duration-300 text-gray-400 hover:text-yellow-400 whitespace-nowrap"
                 >
                   <svg
