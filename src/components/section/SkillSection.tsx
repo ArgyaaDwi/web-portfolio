@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import AmbientParticles from "../core/AmbientParticles";
+import Image from "next/image";
 const tabs = ["Frontend", "Backend", "Tools"] as const;
 type Tab = (typeof tabs)[number];
 
@@ -155,7 +156,6 @@ const SkillSection = () => {
           <div className="mt-4 w-20 h-1 bg-yellow-500/40 rounded-full" />
         </div>
 
-        {/* Tab switcher — underline style */}
         <div
           className="flex gap-8 border-b border-white/10 mb-10"
           style={{
@@ -173,7 +173,6 @@ const SkillSection = () => {
               }}
             >
               {tab}
-              {/* Underline indicator */}
               <span
                 className="absolute bottom-0 left-0 h-[2px] bg-yellow-500 rounded-full transition-all duration-300"
                 style={{ width: activeTab === tab ? "100%" : "0%" }}
@@ -181,8 +180,6 @@ const SkillSection = () => {
             </button>
           ))}
         </div>
-
-        {/* Skills grid */}
         <div
           className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4"
           style={{
@@ -202,12 +199,13 @@ const SkillSection = () => {
               }}
             >
               <div className="w-12 h-12 flex items-center justify-center">
-                <img
+                <Image
                   src={skill.icon}
                   alt={skill.name}
+                  width={40}
+                  height={40}
                   className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
                   style={
-                    // GitHub icon is white-on-transparent — invert to show on dark bg
                     skill.name === "GitHub"
                       ? { filter: "invert(1)" }
                       : undefined

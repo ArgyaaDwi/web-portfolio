@@ -2,84 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import AmbientParticles from "../core/AmbientParticles";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  demoUrl: string;
-  githubUrl: string;
-  featured?: boolean;
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "Omnichannel ERP System",
-    description:
-      "Full-stack e-commerce with cart, payment, and admin dashboard.",
-    image: "/images/projects/omni.png",
-    tags: ["Next.js", "FastAPI", "Machine Learning", "PostgreSQL"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/ArgyaaDwi/FE-SIPPAK-PENS",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Academic Performance Prediction Information System",
-    description:
-      "Full-stack e-commerce with cart, payment, and admin dashboard.",
-    image: "/images/projects/sippak.png",
-    tags: ["Next.js", "FastAPI", "Machine Learning", "PostgreSQL"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/ArgyaaDwi/FE-SIPPAK-PENS",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Maternal and Child Health Management Information System,",
-    description:
-      "ML-based academic performance prediction using stacking ensemble.",
-    image: "/images/projects/simkesia.png",
-    tags: ["Python", "FastAPI", "React", "MySQL"],
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Community Environmental Action Platform,",
-    description:
-      "Collaborative task board with real-time updates and team roles.",
-    image: "/images/projects/sobat-bumi.png",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 5,
-    title: "SME Empowerment Platform,",
-    description: "Scalable RESTful API with JWT auth, rate limiting, and docs.",
-    image: "/images/projects/warga-usaha.png",
-    tags: ["Laravel", "PHP", "MySQL", "Postman"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 6,
-    title: "CFS Modul Feedback",
-    description: "Personal portfolio built with Next.js and smooth animations.",
-    image: "/images/projects/alp.png",
-    tags: ["Next.js", "Tailwind", "TypeScript"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-];
-
-// Placeholder gradient per card when no image
+import { projects } from "../../data/projects";
+import { Project } from "../../types/interface";
 const gradients = [
   "from-yellow-600/40 via-amber-700/30 to-[#0a0a0f]",
   "from-blue-600/40 via-indigo-700/30 to-[#0a0a0f]",
@@ -109,13 +35,13 @@ const ProjectCard = ({
         transition: `opacity 0.6s ease ${0.1 + index * 0.08}s, transform 0.6s ease ${0.1 + index * 0.08}s, border 0.3s, background 0.3s, box-shadow 0.3s, translate 0.3s`,
       }}
     >
-      {/* Thumbnail */}
       <div className="relative h-44 overflow-hidden">
         {!imgError ? (
-          <img
+          <Image
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
             onError={() => setImgError(true)}
           />
         ) : (
@@ -127,26 +53,13 @@ const ProjectCard = ({
             </span>
           </div>
         )}
-
-        {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent opacity-60" />
-
-        {/* Featured badge */}
-        {/* {project.featured && (
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-yellow-500 text-black text-[10px] font-black uppercase tracking-wider">
-            Featured
-          </div>
-        )} */}
       </div>
-
-      {/* Content */}
       <div className="flex flex-col flex-1 p-5 gap-4">
-        {/* Title */}
         <h3 className="text-base font-black text-white group-hover:text-yellow-400 transition-colors duration-300 leading-snug">
           {project.title}
         </h3>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
             <span
@@ -157,30 +70,7 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
-
-        {/* Buttons — pushed to bottom */}
         <div className="flex gap-2 mt-auto pt-2">
-          {/* <a
-            href={project.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-black text-xs font-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(234,179,8,0.35)]"
-          >
-            <svg
-              className="w-3.5 h-3.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-            Live Demo
-          </a> */}
           <a
             href={project.githubUrl}
             target="_blank"
@@ -222,23 +112,11 @@ const Projects = () => {
       id="projects"
       className="relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#0a0a0f] overflow-hidden"
     >
-      {/* Background grid */}
-      {/* <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      /> */}
-
-      {/* Glow orbs */}
       <div className="absolute top-0 left-1/3 w-96 h-96 bg-yellow-500 rounded-full opacity-5 blur-[130px]" />
       <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-amber-400 rounded-full opacity-5 blur-[100px]" />
       <AmbientParticles />
 
       <div ref={ref} className="container mx-auto max-w-6xl relative z-10">
-        {/* Header */}
         <div
           className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14"
           style={{
@@ -262,12 +140,8 @@ const Projects = () => {
             </h2>
             <div className="mt-4 w-20 h-1 bg-yellow-500/40 rounded-full" />
           </div>
-
-          {/* View All button */}
-         
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, i) => (
             <ProjectCard
@@ -278,8 +152,6 @@ const Projects = () => {
             />
           ))}
         </div>
-
-        {/* Bottom CTA */}
         <div
           className="mt-12 flex justify-center"
           style={{

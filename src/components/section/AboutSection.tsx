@@ -12,12 +12,12 @@ const traits = [
   {
     num: "02",
     title: "Curious Learner",
-    desc: "Always hungry for knowledge — from web development to data science, learning is a way of life.",
+    desc: "Always hungry for knowledge from web development to data science, learning is a way of life.",
   },
   {
     num: "03",
     title: "Team Player",
-    desc: "Believing great products come from great collaboration — open, communicative, and supportive by nature.",
+    desc: "Believing great products come from great collaboration, communicative, and supportive by nature.",
   },
 ];
 
@@ -81,34 +81,18 @@ const About = () => {
             </h3>
 
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-              A dedicated 8th-semester Informatics Engineering student at{" "}
-              <span className="font-bold text-gray-300">
-                Politeknik Elektronika Negeri Surabaya
-              </span>
-              , driven by a strong passion for self-improvement and continuous
-              learning.
+              Final-year Informatics Engineering student at{" "}
+              <span className="font-bold text-yellow-400">PENS</span> with
+              hands-on experience in developing robust <span className="font-bold text-white">web applications and
+              Enterprise Resource Planning (ERP) systems.</span>  Proficient in
+              delivering end-to-end solutions using Laravel, RESTful APIs,
+              React, and Tailwind CSS.
             </p>
 
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-              Proficient in front-end web development using modern technologies
-              such as{" "}
-              <span className="font-bold text-gray-300">
-                Tailwind, JavaScript, and React
-              </span>
-              , with hands-on experience in backend development and{" "}
-              <span className="font-bold text-yellow-400">RESTful API</span>{" "}
-              implementation. Currently deepening expertise in{" "}
-              <span className="font-bold text-yellow-400">
-                Data Science & Machine Learning
-              </span>
-              , and open to internship opportunities. Final-year Informatics
-              Engineering student at PENS with hands-on experience in developing
-              robust web applications and Enterprise Resource Planning (ERP)
-              systems. Proficient in delivering end-to-end solutions using
-              Laravel, RESTful APIs, React, and Tailwind CSS. Adept at
-              optimizing complex backend workflows and integrating systems.
-              Passionate about continuous learning, currently exploring Data
-              Science, and actively seeking full-time opportunities as a
+              Adept at optimizing complex backend workflows and integrating
+              systems. Passionate about continuous learning, currently exploring
+              Data Science, and actively seeking full-time opportunities as a
               Software Engineer or Fullstack Developer.
             </p>
           </div>

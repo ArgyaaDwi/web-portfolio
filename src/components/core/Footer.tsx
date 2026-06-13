@@ -1,13 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import AmbientParticles from "./AmbientParticles";
 
 const navLinks = [
@@ -64,7 +58,6 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 text-yellow-400" />
                 Indonesia
               </span>
-             
             </div>
           </div>
 
@@ -109,10 +102,9 @@ const Footer = () => {
                 );
               })}
             </div>
-
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-gray-500">
-              Open to internship opportunities, freelance collaboration, and
-              product-focused development work.
+              Open to full-time job, internship opportunities, and freelance
+              collaboration.
             </p>
           </div>
         </div>
