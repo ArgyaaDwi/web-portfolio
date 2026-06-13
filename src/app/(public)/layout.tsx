@@ -7,8 +7,13 @@ import Footer from "@/components/core/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Argya - Portfolio",
+  title: "ArgyaDwi | My Portfolio",
   description: "Portfolio website by Argya",
+  icons: {
+    icon: "/images/a.jpg",
+    shortcut: "/images/a.jpg",
+    apple: "/images/a.jpg",
+  },
 };
 
 export default function PublicLayout({

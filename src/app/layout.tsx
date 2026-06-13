@@ -12,8 +12,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Argya | Web Portfolio",
+  title: "ArgyaDwi | My Portfolio",
   description: "This is my web portfolio",
+  icons: {
+    icon: "/images/a.jpg",
+    shortcut: "/images/a.jpg",
+    apple: "/images/a.jpg",
+  },
 };
 
 export default function RootLayout({
