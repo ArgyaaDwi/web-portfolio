@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/core/Header";
 import Footer from "@/components/core/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { SiteSettingsProvider } from "@/components/core/SiteSettings";
 
 export const metadata: Metadata = {
   title: "ArgyaDwi | My Portfolio",
@@ -22,12 +20,12 @@ export default function PublicLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+    <div>
+      <SiteSettingsProvider>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-      </body>
-    </html>
+      </SiteSettingsProvider>
+    </div>
   );
 }

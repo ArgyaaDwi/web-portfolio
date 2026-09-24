@@ -1,139 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { Building2, CalendarRange } from "lucide-react";
-import AmbientParticles from "../core/AmbientParticles";
-import { experiences } from "../../data/experience";
+import { useSiteSettings } from "../core/SiteSettings";
 
-const ExperienceSection = () => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.12 },
-    );
-
-    if (ref.current) observer.observe(ref.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <section
-      id="experience"
-      className="relative overflow-hidden bg-[#0a0a0f] px-4 py-24 sm:px-6 lg:px-8 lg:py-32"
-    >
-      <div className="absolute left-0 top-1/4 h-72 w-72 rounded-full bg-yellow-500/10 blur-[120px]" />
-      <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-amber-400/10 blur-[120px]" />
-      <AmbientParticles />
-
-      <div ref={ref} className="container relative z-10 mx-auto max-w-6xl">
-        <div
-          className="mb-16 max-w-2xl"
-          style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(24px)",
-            transition: "opacity 0.7s ease, transform 0.7s ease",
-          }}
-        >
-          <p className="mb-2 text-sm font-medium uppercase tracking-[0.3em] text-gray-600">
-            Where I&apos;ve contributed
-          </p>
-          <h2 className="text-5xl leading-none font-black text-white sm:text-6xl lg:text-7xl">
-            My{" "}
-            <span
-              className="text-transparent"
-              style={{ WebkitTextStroke: "2.5px #eab308" }}
-            >
-              Experience
-            </span>
-          </h2>
-          <div className="mt-4 h-1 w-20 rounded-full bg-yellow-500/40" />
-        </div>
-
-        <div className="relative">
-          <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-yellow-500/0 via-yellow-500/40 to-yellow-500/0 md:left-1/2 md:-translate-x-1/2" />
-
-          <div className="space-y-10">
-            {experiences.map((experience, index) => {
-              const isRight = index % 2 === 1;
-
-              return (
-                <div
-                  key={experience.id}
-                  className={`relative grid grid-cols-1 md:grid-cols-2 ${
-                    isRight ? "md:[&>*:first-child]:col-start-2" : ""
-                  }`}
-                  style={{
-                    opacity: visible ? 1 : 0,
-                    transform: visible
-                      ? "translateY(0)"
-                      : `translateY(${18 + index * 2}px)`,
-                    transition: `opacity 0.65s ease ${0.15 + index * 0.12}s, transform 0.65s ease ${0.15 + index * 0.12}s`,
-                  }}
-                >
-                  <div
-                    className={`relative ml-12 rounded-2xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_10px_40px_rgba(0,0,0,0.18)] transition-colors duration-300 hover:border-yellow-500/40 hover:bg-yellow-500/[0.06] md:ml-0 ${
-                      isRight ? "md:ml-10" : "md:mr-10"
-                    }`}
-                  >
-                    <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
-                      <div className="space-y-2">
-                        <p className="text-lg font-semibold text-white sm:text-2xl">
-                          {experience.position}
-                        </p>
-                      </div>
-
-                      <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-gray-300">
-                        <CalendarRange className="h-4 w-4 text-yellow-400" />
-                        {experience.period}
-                      </div>
-                    </div>
-
-                    <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-yellow-400">
-                      <Building2 className="h-4 w-4" />
-                      {experience.company}
-                    </div>
-
-                    <ul className="space-y-3 text-sm leading-relaxed text-gray-400 sm:text-base">
-                      {experience.descriptions.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-400" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="absolute left-4 top-8 flex h-6 w-6 -translate-x-1/2 items-center justify-center md:left-1/2">
-                    <div className="h-4 w-4 rounded-full border-4 border-[#0a0a0f] bg-yellow-400 shadow-[0_0_20px_rgba(234,179,8,0.5)]" />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      <style jsx>{`
-        @keyframes ambientFloat {
-          0%,
-          100% {
-            transform: translateY(0px) scale(1);
-            opacity: 0.18;
-          }
-          50% {
-            transform: translateY(-12px) scale(1.35);
-            opacity: 0.5;
-          }
-        }
-      `}</style>
-    </section>
-  );
+const entries = {
+  id: [
+    { period: "Mar 2026 - sekarang", role: "Fullstack Developer Intern", company: "CV. DB Klik", points: ["Mengembangkan fitur Omnichannel ERP untuk supply chain, inventori, dan transaksi.", "Mengotomasi mutasi stok antar-gudang dan pembayaran multi-tahap.", "Mengintegrasikan webhook dan Stock History untuk sinkronisasi katalog B2B dan marketplace."] },
+    { period: "Jul 2024 - Jan 2025", role: "Fullstack Web Developer", company: "PT. ALP Petro Industry", points: ["Mengembangkan aplikasi web untuk kebutuhan operasional internal.", "Berkolaborasi lintas fungsi agar sistem sesuai kebutuhan bisnis."] },
+    { period: "Feb 2024 - Mei 2024", role: "Product Manager", company: "SleepDiary / AgileTeknik", points: ["Mengelola delivery Agile bersama developer, designer, dan tester.", "Mengantarkan produk hingga rilis di Play Store."] },
+  ],
+  en: [
+    { period: "Mar 2026 - present", role: "Fullstack Developer Intern", company: "CV. DB Klik", points: ["Developing Omnichannel ERP features for supply chain, inventory, and transactions.", "Automating cross-warehouse stock mutations and multi-stage payments.", "Integrating webhooks and Stock History for B2B and marketplace catalog synchronization."] },
+    { period: "Jul 2024 - Jan 2025", role: "Fullstack Web Developer", company: "PT. ALP Petro Industry", points: ["Developed web applications for internal operational needs.", "Worked cross-functionally to align systems with business requirements."] },
+    { period: "Feb 2024 - May 2024", role: "Product Manager", company: "SleepDiary / AgileTeknik", points: ["Managed Agile delivery with developers, designers, and testers.", "Took the product through to its Play Store release."] },
+  ],
 };
 
-export default ExperienceSection;
+export default function ExperienceSection() {
+  const { copy, locale } = useSiteSettings();
+  return <section id="experience" className="border-b bg-[var(--background)]"><div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-28">
+    <p className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary)]">02 / {copy.experience.label}</p><h2 className="mt-5 text-3xl font-bold tracking-[-0.05em] text-[var(--text-primary)] sm:text-5xl">{copy.experience.title}</h2>
+    <div className="relative mt-14"><div className="absolute bottom-0 left-1.5 top-0 w-px bg-[var(--border-strong)] md:left-1/2 md:-translate-x-1/2" />{entries[locale].map((entry, index) => { const onRight = index % 2 === 1; return <article key={entry.company} className={`relative grid pb-10 last:pb-0 md:grid-cols-2 ${onRight ? "md:[&>div]:col-start-2 md:[&>div]:ml-10" : "md:[&>div]:mr-10"}`}><span className="absolute left-1.5 top-7 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-[var(--background)] bg-[var(--primary)] md:left-1/2" /><div className="ml-8 rounded-2xl border bg-[var(--surface)] p-6 shadow-[0_10px_28px_var(--shadow)] md:ml-0"><p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">0{index + 1} / {entry.period}</p><h3 className="mt-3 text-xl font-bold text-[var(--text-primary)]">{entry.role}</h3><p className="mt-1 text-sm font-semibold text-[var(--primary)]">{entry.company}</p><ul className="mt-5 space-y-2 text-sm leading-6 text-[var(--text-secondary)]">{entry.points.map((point) => <li key={point} className="flex gap-3"><span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-[var(--primary)]" />{point}</li>)}</ul></div></article>; })}</div>
+  </div></section>;
+}
