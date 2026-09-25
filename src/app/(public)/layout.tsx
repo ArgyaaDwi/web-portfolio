@@ -5,7 +5,7 @@ import Footer from "@/components/core/Footer";
 import { SiteSettingsProvider } from "@/components/core/SiteSettings";
 
 export const metadata: Metadata = {
-  title: "ArgyaDwi | My Portfolio",
+  title: "ArgyaDwi",
   description: "Portfolio website by Argya",
   icons: {
     icon: "/images/a.jpg",

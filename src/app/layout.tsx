@@ -12,7 +12,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ArgyaDwi | My Portfolio",
+  title: "ArgyaDwi",
   description: "This is my web portfolio",
   icons: {
     icon: "/images/a.jpg",
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
       >

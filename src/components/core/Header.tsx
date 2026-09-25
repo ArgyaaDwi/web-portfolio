@@ -13,8 +13,8 @@ export default function Header() {
   const labels = locale === "id" ? ["Beranda", "Tentang", "Pengalaman", "Proyek", "Keahlian", "Kontak"] : ["Home", "About", "Experience", "Projects", "Skills", "Contact"];
 
   const controls = <div className="flex items-center gap-1">
-    <button type="button" onClick={toggleTheme} aria-label={copy.controls.theme} className="grid h-9 w-9 place-items-center rounded-full border bg-[var(--surface)] text-[var(--text-secondary)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]">{theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}</button>
-    <button type="button" onClick={() => setLocale(locale === "id" ? "en" : "id")} aria-label={copy.controls.language} className="flex h-9 items-center gap-1 rounded-full border bg-[var(--surface)] px-3 font-mono text-[11px] font-bold text-[var(--text-secondary)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]"><Languages className="h-3.5 w-3.5" />{locale.toUpperCase()}</button>
+    <button type="button" onClick={toggleTheme} aria-label={copy.controls.theme} className="grid h-9 w-9 place-items-center rounded-full cursor-pointer border bg-[var(--surface)] text-[var(--text-secondary)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]">{theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}</button>
+    <button type="button" onClick={() => setLocale(locale === "id" ? "en" : "id")} aria-label={copy.controls.language} className="flex h-9 items-center gap-1 cursor-pointer rounded-full border bg-[var(--surface)] px-3 font-mono text-[11px] font-bold text-[var(--text-secondary)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]"><Languages className="h-3.5 w-3.5" />{locale.toUpperCase()}</button>
   </div>;
 
   return <header className="fixed inset-x-0 top-0 z-50 border-b bg-[var(--background)]">

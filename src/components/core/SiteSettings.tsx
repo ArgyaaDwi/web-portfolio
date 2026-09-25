@@ -12,7 +12,7 @@ const copy = {
     hero: {
       eyebrow: "Full-stack engineer / Surabaya, Indonesia",
       title: "Membangun sistem yang membuat operasi berjalan lebih baik.",
-      intro: "Saya Argya Dwi. Saya mengubah alur kerja bisnis yang kompleks menjadi aplikasi web, integrasi API, dan dashboard yang dapat diandalkan.",
+      intro: "Lulusan Sarjana Terapan Teknik Informatika PENS yang membangun sistem operasional dan integrasi yang andal.",
       primary: "Lihat studi kasus",
       secondary: "Mari berdiskusi",
       proof: ["ERP & workflow bisnis", "Integrasi API & webhook", "Inventory & transaksi"],
@@ -23,8 +23,8 @@ const copy = {
     about: {
       label: "Tentang saya",
       title: "Engineer yang dekat dengan cara kerja bisnis.",
-      lead: "Mahasiswa tingkat akhir Teknik Informatika PENS dengan pengalaman membangun aplikasi web dan ERP untuk kebutuhan operasional.",
-      body: "Fokus saya ada pada sistem yang harus tetap jelas dan dapat dipercaya saat data, transaksi, dan proses tim saling terhubung. Saya bekerja lintas Laravel, React, REST API, dan basis data relasional.",
+      lead: "Lulusan Sarjana Terapan Teknik Informatika PENS dengan pengalaman membangun aplikasi web dan ERP untuk kebutuhan operasional.",
+      body: "Fokus saya ada pada sistem yang harus tetap jelas dan dapat dipercaya saat data, transaksi, dan proses tim saling terhubung. Saya bekerja lintas Laravel, React, REST API, Python, Docker, dan basis data relasional.",
       notes: [
         ["01", "Menerjemahkan proses", "Memetakan aturan bisnis menjadi alur dan fitur yang dapat digunakan tim."],
         ["02", "Menghubungkan sistem", "Mengerjakan API, webhook, sinkronisasi katalog, serta data transaksi."],
@@ -72,7 +72,7 @@ const copy = {
     hero: {
       eyebrow: "Full-stack engineer / Surabaya, Indonesia",
       title: "Building systems that make operations work better.",
-      intro: "I am Argya Dwi. I turn complex business workflows into dependable web applications, API integrations, and dashboards.",
+      intro: "Bachelor of Applied Science graduate in Informatics Engineering from PENS, building dependable operational systems and integrations.",
       primary: "View case studies",
       secondary: "Start a conversation",
       proof: ["ERP & business workflows", "API & webhook integrations", "Inventory & transactions"],
@@ -83,8 +83,8 @@ const copy = {
     about: {
       label: "About",
       title: "An engineer close to how businesses work.",
-      lead: "A final-year PENS Informatics Engineering student with experience building web applications and ERP systems for operational needs.",
-      body: "I focus on systems that need to stay clear and trustworthy as data, transactions, and team processes connect. My work spans Laravel, React, REST APIs, and relational databases.",
+      lead: "A Bachelor of Applied Science graduate in Informatics Engineering from PENS with experience building web applications and ERP systems for operational needs.",
+      body: "I focus on systems that need to stay clear and trustworthy as data, transactions, and team processes connect. My work spans Laravel, React, REST APIs, Python, Docker, and relational databases.",
       notes: [
         ["01", "Translate processes", "Map business rules into workflows and features that teams can use."],
         ["02", "Connect systems", "Build APIs, webhooks, catalog synchronization, and transaction data flows."],
@@ -135,16 +135,15 @@ type SiteSettings = {
 const SiteSettingsContext = createContext<SiteSettings | null>(null);
 
 export function SiteSettingsProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("id");
+  const [locale, setLocale] = useState<Locale>("en");
   const [theme, setTheme] = useState<Theme>("light");
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const savedLocale = window.localStorage.getItem("portfolio-locale");
     const savedTheme = window.localStorage.getItem("portfolio-theme");
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    setLocale(savedLocale === "en" ? "en" : "id");
-    setTheme(savedTheme === "dark" || savedTheme === "light" ? savedTheme : systemTheme);
+    setLocale(savedLocale === "id" ? "id" : "en");
+    setTheme(savedTheme === "dark" || savedTheme === "light" ? savedTheme : "light");
     setReady(true);
   }, []);
 

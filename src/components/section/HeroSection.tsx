@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { useSiteSettings } from "../core/SiteSettings";
 
 const roles = {
-  id: ["Full-stack Developer", "Integrasi API", "Developer React & Next.js"],
-  en: ["Full-stack Developer", "API Integration", "React & Next.js Developer"],
+  id: ["Full-stack Developer", "Software Engineer", "Integrasi API"],
+  en: ["Full-stack Developer", "Software Engineer", "API Integration"],
 };
 
 export default function HeroSection() {

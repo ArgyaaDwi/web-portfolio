@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useSiteSettings } from "../core/SiteSettings";
 
-const tabs = ["Frontend", "Backend", "Tools"] as const;
+const tabs = ["Frontend", "Backend", "Others"] as const;
 type Tab = (typeof tabs)[number];
 
 const skills: Record<Tab, { name: string; icon: string }[]> = {
@@ -18,16 +18,21 @@ const skills: Record<Tab, { name: string; icon: string }[]> = {
   ],
   Backend: [
     { name: "PHP", icon: "https://cdn.simpleicons.org/php" },
+    { name: "Golang", icon: "https://cdn.simpleicons.org/go" },
     { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
     { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
     { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs" },
     { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql" },
+    { name: "Redis", icon: "https://cdn.simpleicons.org/redis" },
   ],
-  Tools: [
+  Others: [
     { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
     { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { name: "Linux", icon: "https://cdn.simpleicons.org/linux" },
+    { name: "Nginx", icon: "https://cdn.simpleicons.org/nginx" },
+    { name: "CI/CD", icon: "https://cdn.simpleicons.org/githubactions" },
     { name: "Postman", icon: "https://cdn.simpleicons.org/postman" },
     { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
     { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
@@ -38,7 +43,7 @@ const skills: Record<Tab, { name: string; icon: string }[]> = {
 export default function SkillSection() {
   const [activeTab, setActiveTab] = useState<Tab>("Frontend");
   const { copy, locale } = useSiteSettings();
-  const labels = locale === "id" ? { Frontend: "Frontend", Backend: "Backend", Tools: "Tools" } : { Frontend: "Frontend", Backend: "Backend", Tools: "Tools" };
+  const labels = locale === "id" ? { Frontend: "Frontend", Backend: "Backend", Others: "Lainnya" } : { Frontend: "Frontend", Backend: "Backend", Others: "Others" };
   return <section id="skills" className="border-b bg-[var(--background)]"><div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-28">
     <p className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary)]">04 / {copy.skills.label}</p><h2 className="mt-5 max-w-3xl text-3xl font-bold tracking-[-0.05em] text-[var(--text-primary)] sm:text-5xl">{copy.skills.title}</h2>
     <div className="mt-12 flex gap-1 border-b"><div className="flex gap-5">{tabs.map((tab) => <button key={tab} type="button" onClick={() => setActiveTab(tab)} className={`relative pb-3 text-sm font-semibold transition ${activeTab === tab ? "text-[var(--primary)]" : "text-[var(--text-muted)] hover:text-[var(--text-secondary)]"}`}>{labels[tab]}{activeTab === tab && <span className="absolute inset-x-0 -bottom-px h-0.5 bg-[var(--primary)]" />}</button>)}</div></div>

@@ -6,14 +6,14 @@ import { useSiteSettings } from "../core/SiteSettings";
 
 const projects = {
   id: [
-    { title: "Omnichannel ERP System", image: "/images/projects/omni.png", description: "Pengembangan fitur ERP untuk alur supply chain, kontrol inventori, dan transaksi internal.", tags: ["Laravel", "REST API", "MySQL", "Webhooks"], href: "", featured: true },
-    { title: "SIPPAK", image: "/images/projects/sippak.png", description: "Sistem informasi prediksi performa akademik dengan aplikasi web dan machine-learning pipeline.", tags: ["Next.js", "FastAPI", "PostgreSQL", "ML"], href: "https://github.com/ArgyaaDwi/FE-SIPPAK-PENS" },
-    { title: "SIMKESIA", image: "/images/projects/simkesia.png", description: "Sistem informasi manajemen kesehatan ibu dan anak untuk pencatatan dan layanan.", tags: ["React", "FastAPI", "MySQL"], href: "" },
+    { title: "Omnichannel ERP System", image: "/images/projects/omni.png", description: "Mengerjakan modul Preorder, Stock Adjustment, Replace, Refund, Trade-In, Dropship Partner, serta integrasi marketplace API dan webhook.", tags: ["Laravel", "Python", "MySQL", "Webhooks"], href: "", featured: true },
+    { title: "SIPPAK", image: "/images/projects/sippak.png", description: "Sistem prediksi performa akademik dengan ensemble machine learning yang terintegrasi ke aplikasi web.", tags: ["Next.js", "FastAPI", "PostgreSQL", "ML"], href: "https://github.com/ArgyaaDwi/FE-SIPPAK-PENS" },
+    { title: "SIMKESIA", image: "/images/projects/simkesia.png", description: "Sistem e-Government untuk deteksi dini stunting dan monitoring kesehatan ibu-anak dengan dukungan RAG-based AI.", tags: ["Laravel", "React", "MySQL", "RAG AI"], href: "" },
   ],
   en: [
-    { title: "Omnichannel ERP System", image: "/images/projects/omni.png", description: "ERP feature development for supply-chain workflows, inventory control, and internal transactions.", tags: ["Laravel", "REST API", "MySQL", "Webhooks"], href: "", featured: true },
-    { title: "SIPPAK", image: "/images/projects/sippak.png", description: "An academic performance prediction information system with a web application and machine-learning pipeline.", tags: ["Next.js", "FastAPI", "PostgreSQL", "ML"], href: "https://github.com/ArgyaaDwi/FE-SIPPAK-PENS" },
-    { title: "SIMKESIA", image: "/images/projects/simkesia.png", description: "A maternal and child health management system for records and services.", tags: ["React", "FastAPI", "MySQL"], href: "" },
+    { title: "Omnichannel ERP System", image: "/images/projects/omni.png", description: "Built Preorder, Stock Adjustment, Replace, Refund, Trade-In, and Dropship Partner modules, plus marketplace API and webhook integrations.", tags: ["Laravel", "Python", "MySQL", "Webhooks"], href: "", featured: true },
+    { title: "SIPPAK", image: "/images/projects/sippak.png", description: "An academic performance prediction system using ensemble machine learning integrated into a web application.", tags: ["Next.js", "FastAPI", "PostgreSQL", "ML"], href: "https://github.com/ArgyaaDwi/FE-SIPPAK-PENS" },
+    { title: "SIMKESIA", image: "/images/projects/simkesia.png", description: "An e-Government system for early stunting detection and maternal-child health monitoring, supported by RAG-based AI.", tags: ["Laravel", "React", "MySQL", "RAG AI"], href: "" },
   ],
 };
 

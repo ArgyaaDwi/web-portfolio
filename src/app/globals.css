@@ -15,6 +15,8 @@
   --border: #D8DEE5;
   --border-strong: #C5CFD8;
   --shadow: rgba(30, 42, 51, 0.08);
+  --award: #7A6B45;
+  --award-soft: #F1EEE6;
 }
 
 :root.dark {
@@ -30,6 +32,8 @@
   --border: #1F2C3A;
   --border-strong: #2B3C4D;
   --shadow: rgba(0, 0, 0, 0.28);
+  --award: #B7A46A;
+  --award-soft: #29271E;
 }
 
 @theme inline {
